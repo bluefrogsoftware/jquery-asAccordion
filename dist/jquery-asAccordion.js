@@ -124,7 +124,7 @@
         _trigger: function(eventType) {
             var method_arguments = Array.prototype.slice.call(arguments, 1),
                 data = [this].concat(method_arguments);
-            
+
             // event
             this.$element.trigger('asAccordion::' + eventType, data);
 
@@ -172,7 +172,7 @@
                 self.$element.removeClass(self.classes.direction);
                 self.classes.direction = self.namespace + '--' + self.options.direction;
                 self.$element.addClass(self.classes.direction);
-                
+
                 style[self.animateProperty] = self.distance;
                 self.$panel.css(style).removeClass(self.classes.active);
 
@@ -237,9 +237,9 @@
                 }
             }else {
                 if (this.options.direction === 'vertical') {
-                    distance = $panel.find('.' + this.namespace + '__expander').outerHeight() + this.distance;
+                    distance = $panel.find('.' + this.namespace + '__expander').outerHeight();
                 } else {
-                    distance = $panel.find('.' + this.namespace + '__expander').outerWidth() + this.distance;
+                    distance = $panel.find('.' + this.namespace + '__expander').outerWidth();
                 }
 
                 if (this.options.multiple && $.isArray(this.current)) {
